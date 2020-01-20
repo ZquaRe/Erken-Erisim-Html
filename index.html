@@ -1,0 +1,165 @@
+<!--
+ ______                 ______                                
+|___  /                 | ___ \                               
+   / /  __ _ _   _  __ _| |_/ /___                            
+  / /  / _` | | | |/ _` |    // _ \                           
+./ /__| (_| | |_| | (_| | |\ \  __/                           
+\_____/\__, |\__,_|\__,_\_| \_\___|                           
+          | |                                                 
+          |_|                                                 
+                                                                                                                       
+______          _                 _____               _       
+|  ___|        | |               /  ___|             (_)      
+| |_ _   _ _ __| | ____ _ _ __   \ `--.  ___ ______ _ _ _ __  
+|  _| | | | '__| |/ / _` | '_ \   `--. \/ _ \_  / _` | | '_ \ 
+| | | |_| | |  |   < (_| | | | | /\__/ /  __// / (_| | | | | |
+\_|  \__,_|_|  |_|\_\__,_|_| |_| \____/ \___/___\__, |_|_| |_|
+                                                 __/ |        
+                                                |___/         
+-->
+
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="ZquaRe">
+    <meta name="generator" content="Furkan Sezgin">
+    <title>Route</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="assets/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,800|Open+Sans|Poppins|Roboto&display=swap" rel="stylesheet">
+    <script src='https://www.google.com/recaptcha/api.js?hl=tr'></script>
+
+    <!-- Favicons -->
+    <!--
+    <link rel="apple-touch-icon" href="/docs/4.4/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
+    <link rel="icon" href="/docs/4.4/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="/docs/4.4/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+    <link rel="manifest" href="/docs/4.4/assets/img/favicons/manifest.json">
+    <link rel="mask-icon" href="/docs/4.4/assets/img/favicons/safari-pinned-tab.svg" color="#563d7c">
+    <link rel="icon" href="/docs/4.4/assets/img/favicons/favicon.ico">
+    -->
+    <meta name="theme-color" content="#563d7c">
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+        
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+        
+        label {
+            font-weight: 600;
+            font-size: 16px;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .earlyLabel {
+            font-weight: 900;
+            font-size: 26px;
+            font-family: 'Open Sans', sans-serif;
+        }
+        
+        .welcomeText {
+            font-weight: 900;
+            font-size: 38px;
+            font-family: 'Montserrat', sans-serif;
+            letter-spacing: -1px;
+        }
+        
+        .welcomeSpan {
+            font-size: 18px;
+            font-family: 'Montserrat', sans-serif;
+            letter-spacing: -0.5px;
+        }
+        
+        .contact {
+            color: #fff;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        a:hover {
+            color: #fff;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+        <h5 class="my-0 mr-md-auto font-weight-normal">
+
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsIAAA7CARUoSoAAAARJSURBVGhD7ZnbK3RdHMd/zjSORSSnTCSH1ExNiQuNC38AiQty6UbJjQu5wAVF+CccEpdckEvFDRKaqdeb8JZTOR8Hv3f9tt/zPO1n1uxZe2bex3jzqe+01p757bW/s85rRwDAP0Jfnb/JCH6kvzTuSE58eb6NhBvfRsKN/2TUioiIgKSkJLBYLFr6+fkZbm5uwOPx8C9CjjtkRqxWKzQ0NIDT6YSKigpITU2FmJgYzcjr66tm5ujoCDY3N2FpaQkWFhbg8vKSo4PGTR9kJGCVlpbi/Pw8igdFMwgTODo6ipmZmdL7mpRLSPqFX0VGRmJ3dzc+PDzwowXG2dkZNjc3o6g5aTmKCsxIVFQUjo+P4/v7Oz9OcLy9vWFfX18wZgIz0tPTEzITP6D7dXR0SMtTkMt0Z7fZbLC6ugrx8fF8xZvHx0dwuVxwcHCgdfT09HQoLi6G7OxsrfP74v7+Hux2O7jdWt81g7nOTlW/uLjI/6E3YojF3t5ezMrK8oqNjo5Gh8OBU1NTKMxxhDeTk5NesQoy17QqKyt9PsTx8TGWl5dL435XU1MTilrjSD2iVjAjI0MaZyBzRoaGhrg4PS8vL1hVVSWN8aWuri6O9qalpUUaYyBzRjY2NrgoPdPT09LfGykuLg7FBMl30EMjoizGQC7ltVZKSorWYWWIds0pdWimX1lZ4ZweGhTMojxqiRkcdnd3OfcL0awgLy8PTk9P+Yo6RUVF0N/fD8nJyXzlw+DIyAisra3xFSXUR63a2lqueD1XV1faBCmL+YNSb1q0mpUhliggZmbOfR7KRsS/zik9NOGFA8pGxCjDKT3UR8IBZSOxsbGc0kOdMxxQNnJ3d8cpPYmJiZz6XJSNiAGKU3qMFoF/EmUjtKKVkZCQwKnPRdnI9fU1p/TQcj4YM7m5uVBWVvZTNEmK3Sd/a47fJxepRIHSlS/t7kpKSqQx/tTW1oYej4fv9AFtsAYHB6W/N5D6hHhycgIXFxec+wX9e/X19ZwzR2NjI4h9Cuc+oD5XUFDAOXWUjdCZlK/1j9ii+pxnfEFNqq6ujnN6aHcZCLKqkqq9vZ0bgDfDw8PSGJnEnGS406ypqZHGGcjcfkQs5fH8/JyL00N9ZWJiAsW8Io39ocLCQlxeXuYob/b39zWjslgDmTNComMbI2izNDAwgE6nE61WK+bn56PdbsfW1lacmZnxew7W2dkpLdePzBuxWCy4vb3NxYaW9fV1becoK9ePzBshifFeOyEMJYeHh1qzk5WnoMCMkGw2m889t1l2dnZQbKOl5SgqcCMksbfGubk5w3MqI6i/jI2NodjqSu9vQsEZIdGhXXV1Nc7OzuLt7S0/om9o5qaapJN4Ggxk9wxA5o9MjaCTFofDob0fycnJgbS0NO3609MTiGEbxNAKW1tbsLe3F+qXPqF70fPJfL9nDzu+jYQb30bCjf+NEZpHbj6SXxn4619mKX/CVERI5gAAAABJRU5ErkJggg==" alt="Minizone">
+
+        </h5>
+        <!--  <a class="btn btn-outline-primary" href="#">Sign up</a> -->
+    </div>
+
+    <div class="container" style="margin-top:69px;">
+
+        <div class="row">
+            <div class="col-md-6 mb-5">
+                <label for="email" class="welcomeText">Direkt rezervasyon gelirinizi arttırın.</label>
+                <span class="welcomeSpan">
+Daha fazla direkt rezervasyon alın, rezervasyonlarınızı yönetin ve daha iyi bir misafir deneyimi sunun.
+</span>
+            </div>
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <label class="earlyLabel">Erken Erişim Formu</label>
+
+                </div>
+                <div class="mb-3">
+                    <label>İşletme adı</label>
+                    <input type="text" class="form-control" placeholder="İşletme Adı">
+                </div>
+
+                <div class="mb-3">
+                    <label>Yetkili adı ve soyadı</label>
+                    <input type="text" class="form-control" placeholder="Yetkili adı ve soyadı">
+                </div>
+
+                <div class="mb-3">
+                    <label>Telefon numarası</label>
+                    <input type="text" class="form-control" placeholder="Telefon numarası">
+                </div>
+
+                <div class="mb-3">
+                    <label>E-Posta Adresi</label>
+                    <input type="email" class="form-control" placeholder="E-Posta">
+                </div>
+                <div class="mb-3">
+                    <label>Güvenlik Doğrulaması</label>
+                    <div class="g-recaptcha" data-sitekey=""></div>
+                </div>
+                <div class="mb-3">
+                    <button type="button" class="btn btn-dark" style="font-weight: 600; border-radius: 5px;">Gönder</button>
+                    <small id="emailHelp" class="form-text text-muted mt-2" style="font-weight: 700;
+">Bu bilgiler sadece erken erişim talebiniz ile ilgili tarafınızla iletişime geçmek için kullanılacaktır.</small>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer class="footer navbar-fixed-bottom" style="margin-top:100px;">
+        <div class="p-3 m-0 bg-dark text-white text-center Contact"><a href="#" class="contact">Bize Ulaşın</a></div>
+
+    </footer>
+
+</body>
+
+</html>
