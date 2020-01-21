@@ -7,7 +7,7 @@
 \_____/\__, |\__,_|\__,_\_| \_\___|                           
           | |                                                 
           |_|                                                 
-                                                                                                                       
+
 ______          _                 _____               _       
 |  ___|        | |               /  ___|             (_)      
 | |_ _   _ _ __| | ____ _ _ __   \ `--.  ___ ______ _ _ _ __  
@@ -18,9 +18,9 @@ ______          _                 _____               _
                                                 |___/         
 -->
 
-
 <!DOCTYPE html>
 <html lang="tr">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -78,12 +78,17 @@ ______          _                 _____               _
             font-size: 38px;
             font-family: 'Montserrat', sans-serif;
             letter-spacing: -1px;
+            margin-top: -4px;
         }
         
         .welcomeSpan {
-            font-size: 18px;
+            /*font-size: 18px;*/
             font-family: 'Montserrat', sans-serif;
-            letter-spacing: -0.5px;
+            /* letter-spacing: -0.5px;*/
+            margin-top: 12px;
+            font-weight: 400;
+            font-size: 16px;
+            letter-spacing: .5px;
         }
         
         .contact {
@@ -94,6 +99,10 @@ ______          _                 _____               _
         a:hover {
             color: #fff;
             text-decoration: none;
+        }
+        
+        .shadow-sm {
+            box-shadow: none!important
         }
     </style>
 </head>
@@ -108,42 +117,47 @@ ______          _                 _____               _
         <!--  <a class="btn btn-outline-primary" href="#">Sign up</a> -->
     </div>
 
-    <div class="container" style="margin-top:69px;">
+    <div class="container" style="margin-top:70px;">
 
         <div class="row">
             <div class="col-md-6 mb-5">
-                <label for="email" class="welcomeText">Direkt rezervasyon gelirinizi arttırın.</label>
-                <span class="welcomeSpan">
-Daha fazla direkt rezervasyon alın, rezervasyonlarınızı yönetin ve daha iyi bir misafir deneyimi sunun.
-</span>
+                <label class="welcomeText">
+                    Direkt rezervasyon
+                    <br/> 
+                    gelirinizi arttırın.
+                </label>
+
+                <span class="welcomeSpan" style="display: block;">
+                Spor salonunuz için kullanıcı deneyiminizi arttırın, salon ihtiyaçlarınızı giderin.
+                </span>
+
             </div>
             <div class="col-md-6">
                 <div class="mb-3">
-                    <label class="earlyLabel">Erken Erişim Formu</label>
-
+                    <label class="earlyLabel">Erken erişim formu</label>
                 </div>
                 <div class="mb-3">
                     <label>İşletme adı</label>
-                    <input type="text" class="form-control" placeholder="İşletme Adı">
+                    <input type="text" class="form-control" placeholder="İşletme Adı" required>
                 </div>
 
                 <div class="mb-3">
                     <label>Yetkili adı ve soyadı</label>
-                    <input type="text" class="form-control" placeholder="Yetkili adı ve soyadı">
+                    <input type="text" class="form-control" placeholder="Yetkili adı ve soyadı" required>
                 </div>
 
                 <div class="mb-3">
                     <label>Telefon numarası</label>
-                    <input type="text" class="form-control" placeholder="Telefon numarası">
+                    <input type="text" class="form-control" placeholder="Telefon numarası" required>
                 </div>
 
                 <div class="mb-3">
-                    <label>E-Posta Adresi</label>
-                    <input type="email" class="form-control" placeholder="E-Posta">
+                    <label>Kurumsal e-posta adresi</label>
+                    <input type="email" class="form-control" placeholder="Kurumsal e-posta adresi" required>
                 </div>
                 <div class="mb-3">
                     <label>Güvenlik Doğrulaması</label>
-                    <div class="g-recaptcha" data-sitekey=""></div>
+                    <div class="g-recaptcha" data-sitekey="SITE_KEY" required></div>
                 </div>
                 <div class="mb-3">
                     <button type="button" class="btn btn-dark" style="font-weight: 600; border-radius: 5px;">Gönder</button>
@@ -156,8 +170,8 @@ Daha fazla direkt rezervasyon alın, rezervasyonlarınızı yönetin ve daha iyi
     </div>
 
     <footer class="footer navbar-fixed-bottom" style="margin-top:100px;">
-        <div class="p-3 m-0 bg-dark text-white text-center Contact"><a href="#" class="contact">Bize Ulaşın</a></div>
-
+        <div class="p-3 m-0 bg-dark text-white text-center Contact"><a href="mail@site.com" class="contact">Bize Ulaşın</a>
+        </div>
     </footer>
 
 </body>
